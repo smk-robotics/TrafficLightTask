@@ -35,7 +35,7 @@ protected:
         simplet_traffic_light_detector_params_ = std::make_shared<SimpleTrafficLightDetectorParams>(
             green_light_detection_params_, red_light_detection_params_, yellow_light_detection_params_);
     }
-    
+
 protected:
     CircleDetectionParams green_light_detection_params_;
     CircleDetectionParams red_light_detection_params_;

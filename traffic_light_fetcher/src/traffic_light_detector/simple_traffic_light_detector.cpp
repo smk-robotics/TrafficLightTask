@@ -1,5 +1,5 @@
-#include <opencv2/imgproc.hpp>
 #include "simple_traffic_light_detector.h"
+#include <opencv2/imgproc.hpp>
 
 namespace traffic_light_detector {
 
