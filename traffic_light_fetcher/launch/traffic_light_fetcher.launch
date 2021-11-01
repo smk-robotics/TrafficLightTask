@@ -1,4 +1,4 @@
 <launch>
-    <node name="talker" pkg="rospy_tutorials" type="talker" />
+    <node name="traffic_light_fetcher" pkg="traffic_light_fetcher" type="traffic_light_fetcher_node" />
     <rosparam command="load" file="$(find traffic_light_fetcher)/config/traffic_light_fetcher_params.yaml"/>
 </launch>
