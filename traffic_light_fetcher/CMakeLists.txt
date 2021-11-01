@@ -22,4 +22,6 @@ target_include_directories(${TRAFFIC_LIGHT_DETECTOR} PUBLIC
     include/${TRAFFIC_LIGHT_DETECTOR}
 )
 
-add_subdirectory(test)
+if (CATKIN_ENABLE_TESTING)
+    add_subdirectory(test)
+endif()
