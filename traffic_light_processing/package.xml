@@ -2,7 +2,7 @@
 <package format="2">
   <name>traffic_light_processing</name>
   <version>1.0.0</version>
-  <description>ROS meta package for full traffic light processing control.</description>
+  <description>ROS meta-package for full traffic light processing control.</description>
 
   <maintainer email="smk.robotics@gmail.com">Kirill Smirnov</maintainer>
   
