@@ -1,0 +1,13 @@
+<launch>
+    <test test-name="traffic_light_analysis_test" pkg="traffic_light_analysis"
+          type="traffic_light_analysis_test.py" time-limit="10.0" >
+        <remap from="~zone_height" 
+               to="/traffic_light_analysis/zone_height" />
+        <remap from="~traffic_light_detected" 
+               to="/traffic_light_analysis/traffic_light_detected" />
+        <remap from="~traffic_light_size" 
+               to="/traffic_light_analysis/traffic_light_size" />
+    </test>
+    <node name="traffic_light_analysis" pkg="traffic_light_analysis"
+          type="traffic_light_analysis_node" />
+</launch>
