@@ -6,7 +6,11 @@ add_compile_options(-Wall -Werror -Wextra)
 find_package(OpenCV REQUIRED)
 
 find_package(catkin REQUIRED COMPONENTS
+    sensor_msgs
+    cv_bridge
     roscpp
+    std_msgs
+    geometry_msgs
 )
 
 catkin_package()

@@ -6,8 +6,8 @@ traffic_light_detector:
     inverse_ratio:          1.0 # Inverse ratio of the accumulator resolution 
                                 # to the image resolution.
     min_distance:          60.0 # Min distance between circles [pixels].
-    higher threshold:      50.0 # For Hough Gradient detection method.
-    accumulator threshold: 10.0 # For Hough Gradient detection method.
+    higher_threshold:      50.0 # For Hough Gradient detection method.
+    accumulator_threshold: 10.0 # For Hough Gradient detection method.
     min_radius:             0   # Min circle radius for detection [pixels].
     max_radius:            30   # Max circle darius for detection [pixels].
   red_light:
@@ -17,8 +17,8 @@ traffic_light_detector:
     inverse_ratio:          1.0 # Inverse ratio of the accumulator resolution 
                                 # to the image resolution.
     min_distance:          60.0 # Min distance between circles [pixels].
-    higher threshold:      50.0 # For Hough Gradient detection method.
-    accumulator threshold: 10.0 # For Hough Gradient detection method.
+    higher_threshold:      50.0 # For Hough Gradient detection method.
+    accumulator_threshold: 10.0 # For Hough Gradient detection method.
     min_radius:             0   # Min circle radius for detection [pixels].
     max_radius:            30   # Max circle darius for detection [pixels].
   yellow_light:
@@ -28,7 +28,7 @@ traffic_light_detector:
     inverse_ratio:          1.0 # Inverse ratio of the accumulator resolution 
                                 # to the image resolution.
     min_distance:          60.0 # Min distance between circles [pixels].
-    higher threshold:      50.0 # For Hough Gradient detection method.
-    accumulator threshold: 10.0 # For Hough Gradient detection method.
+    higher_threshold:      50.0 # For Hough Gradient detection method.
+    accumulator_threshold: 10.0 # For Hough Gradient detection method.
     min_radius:             0   # Min circle radius for detection [pixels].
     max_radius:            30   # Max circle darius for detection [pixels].

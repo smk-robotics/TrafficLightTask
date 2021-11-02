@@ -4,7 +4,6 @@
  * @brief Simple traffic light detector class declaration.
  * @date 2021-11-01
  * @copyright GNU General Public License v3.0.
- * 
  */
 # pragma once
 
