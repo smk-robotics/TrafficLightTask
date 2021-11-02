@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>traffic_light_fetcher</name>
+  <version>1.0.0</version>
+  <description>ROS package for traffic light detection.</description>
+
+  <maintainer email="smk.robotics@gmail.com">Kirill Smirnov</maintainer>
+  
+  <license>GPL-3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+
+  <test_depend>rostest</test_depend>
+</package>

@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Video Datasets
+*.mkv
+
+# vscode settings
+.vscode

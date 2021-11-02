@@ -1,0 +1,34 @@
+traffic_light_detector:
+  green_light:
+    color_lower_bound: [40, 50, 50]
+    color_upper_bound: [90, 255, 255]
+    detection_method:       3   # cv::HOUGH_GRADIENT circle detection method.
+    inverse_ratio:          1.0 # Inverse ratio of the accumulator resolution 
+                                # to the image resolution.
+    min_distance:          60.0 # Min distance between circles [pixels].
+    higher_threshold:      50.0 # For Hough Gradient detection method.
+    accumulator_threshold: 10.0 # For Hough Gradient detection method.
+    min_radius:             0   # Min circle radius for detection [pixels].
+    max_radius:            30   # Max circle darius for detection [pixels].
+  red_light:
+    color_lower_bound: [160, 100, 100]
+    color_upper_bound: [180, 255, 255]
+    detection_method:       3   # cv::HOUGH_GRADIENT circle detection method.
+    inverse_ratio:          1.0 # Inverse ratio of the accumulator resolution 
+                                # to the image resolution.
+    min_distance:          60.0 # Min distance between circles [pixels].
+    higher_threshold:      50.0 # For Hough Gradient detection method.
+    accumulator_threshold: 10.0 # For Hough Gradient detection method.
+    min_radius:             0   # Min circle radius for detection [pixels].
+    max_radius:            30   # Max circle darius for detection [pixels].
+  yellow_light:
+    color_lower_bound: [15, 150, 150]
+    color_upper_bound: [35, 255, 255]
+    detection_method:       3   # cv::HOUGH_GRADIENT circle detection method.
+    inverse_ratio:          1.0 # Inverse ratio of the accumulator resolution 
+                                # to the image resolution.
+    min_distance:          60.0 # Min distance between circles [pixels].
+    higher_threshold:      50.0 # For Hough Gradient detection method.
+    accumulator_threshold: 10.0 # For Hough Gradient detection method.
+    min_radius:             0   # Min circle radius for detection [pixels].
+    max_radius:            30   # Max circle darius for detection [pixels].

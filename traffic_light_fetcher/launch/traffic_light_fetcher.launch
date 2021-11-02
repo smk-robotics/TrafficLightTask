@@ -1,0 +1,7 @@
+<launch>
+    <node name="traffic_light_fetcher" pkg="traffic_light_fetcher" 
+          type="traffic_light_fetcher_node" output="screen">
+        <rosparam command="load" 
+                  file="$(find traffic_light_fetcher)/config/traffic_light_fetcher_params.yaml"/>
+    </node>
+</launch>
