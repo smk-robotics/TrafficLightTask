@@ -1,0 +1,12 @@
+<launch>
+    <node name="traffic_light_fetcher" pkg="traffic_light_fetcher" 
+          type="traffic_light_fetcher_node" output="screen">
+     <rosparam command="load" 
+               file="$(find traffic_light_fetcher)/config/traffic_light_fetcher_params.yaml"/>
+    </node>
+    <node name="traffic_light_analysis" pkg="traffic_light_analysis" 
+          type="traffic_light_analysis_node" output="screen">
+          <remap from="~traffic_light_detected" to="/traffic_light_fetcher/traffic_light_detected"/>
+          <remap from="~traffic_light_size" to="/traffic_light_fetcher/traffic_light_size"/>
+    </node>
+</launch>
