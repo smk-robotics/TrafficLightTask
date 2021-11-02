@@ -1,4 +1,5 @@
 find_package(GTest REQUIRED)
+find_package(rostest REQUIRED)
 
 set(TEST_NAME simple_traffic_light_detector_test)
 
@@ -14,3 +15,5 @@ target_link_libraries(${TEST_NAME} PRIVATE
 )
 
 gtest_discover_tests(${TEST_NAME})
+
+add_rostest(traffic_light_fetcher.test)

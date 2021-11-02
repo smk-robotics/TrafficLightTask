@@ -1,0 +1,16 @@
+<launch>
+    <test test-name="traffic_light_fetcher_test" pkg="traffic_light_fetcher"
+          type="traffic_light_fetcher_test.py" time-limit="10.0" >
+        <remap from="~image_topic" 
+               to="/traffic_light_fetcher/input_image" />
+        <remap from="~traffic_light_detected" 
+               to="/traffic_light_fetcher/traffic_light_detected" />
+        <remap from="~traffic_light_size" 
+               to="/traffic_light_fetcher/traffic_light_size" />
+    </test>
+    <node name="traffic_light_fetcher" pkg="traffic_light_fetcher"
+          type="traffic_light_fetcher_node">
+        <rosparam command="load" 
+                  file="$(find traffic_light_fetcher)/config/traffic_light_fetcher_params.yaml"/>
+    </node>
+</launch>

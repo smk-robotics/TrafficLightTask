@@ -26,8 +26,15 @@ void TrafficLightFetcherNode::setup_node_communications_() noexcept {
     traffic_light_size_pub_ = pnh_->advertise<geometry_msgs::Vector3>("traffic_light_size", 1, true);
 }
 
-void TrafficLightFetcherNode::input_image_callback_(const sensor_msgs::ImageConstPtr &img) const noexcept{
-    const auto cv_bridge_img_ptr = cv_bridge::toCvCopy(img, sensor_msgs::image_encodings::BGR8);
+void TrafficLightFetcherNode::input_image_callback_(const sensor_msgs::ImageConstPtr &img) const {
+    cv_bridge::CvImagePtr cv_bridge_img_ptr;
+    try {
+        cv_bridge_img_ptr = cv_bridge::toCvCopy(img);
+    }
+    catch (cv_bridge::Exception& e) {
+        ROS_ERROR("[TrafficLightFetcherNode] - cv_bridge exception: %s", e.what());
+        return;
+    }
     const auto detected_traffic_light_bbox = traffic_light_detector_->detect_traffic_light(cv_bridge_img_ptr->image);
     if (detected_traffic_light_bbox.has_value()) {
         publish_detected_traffic_light_(detected_traffic_light_bbox.value());
