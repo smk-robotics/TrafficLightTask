@@ -1,0 +1,4 @@
+<launch>
+    <node name="traffic_light_analysis" pkg="traffic_light_analysis" 
+          type="traffic_light_analysis_node" output="screen" />
+</launch>

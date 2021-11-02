@@ -20,10 +20,11 @@ namespace traffic_light_fetcher {
 class TrafficLightFetcherNode {
 public:
     /**
-     * @brief Construct a new Traffic Light Fetcher Node object
+     * @brief Construct a new Traffic Light Fetcher Node object.
      * @param nodehandler Private ROS nodehandler.
      */
     TrafficLightFetcherNode(const ros::NodeHandlePtr& nodehandler);
+
 private:
     /**
      * @brief Get all parameters for traffic light detector from ROS server add
@@ -45,6 +46,7 @@ private:
      * @param traffic_light_size Detected traffic light bounding box size.
      */
     void publish_detected_traffic_light_(const cv::Vec2i &traffic_light_size) const noexcept;
+
 private:
     /**
      * @brief ROS nodehandle for setting up node communication and gettin parameters

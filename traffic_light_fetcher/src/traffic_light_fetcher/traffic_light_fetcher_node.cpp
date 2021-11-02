@@ -1,3 +1,10 @@
+/**
+ * @file traffic_light_fetcher_node.cpp
+ * @author Kirill Smirnov <smk.robotics@gmail.com>
+ * @brief Traffic light fetcher node implementation.
+ * @date 2021-11-02
+ * @copyright GNU General Public License v3.0.
+ */
 #include "traffic_light_fetcher_node.h"
 #include <cv_bridge/cv_bridge.h>
 #include <std_msgs/Bool.h>

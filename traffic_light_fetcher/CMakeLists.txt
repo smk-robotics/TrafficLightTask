@@ -56,10 +56,6 @@ target_link_libraries(traffic_light_fetcher_node PRIVATE
     ${TRAFFIC_LIGHT_FETCHER}
 )
 
-target_include_directories(traffic_light_fetcher_node PUBLIC
-    ${catkin_INCLUDE_DIRS}   
-)
-
 if (CATKIN_ENABLE_TESTING)
     add_subdirectory(test)
 endif()

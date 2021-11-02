@@ -4,7 +4,6 @@
  * @brief Main file for running ROS traffic light fetcher node.
  * @date 2021-11-01
  * @copyright GNU General Public License v3.0.
- * 
  */
 #include "traffic_light_fetcher_node.h"
 #include <iostream>
