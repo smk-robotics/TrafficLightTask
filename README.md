@@ -1,17 +1,17 @@
 # TrafficLightTask
 
-ROS packages for traffic light processing. detection and analysis.
+ROS packages for very simple traffic light processing.
 
 ## Details
 
 Repository contains 3 packages:
 
-* **traffic_light_fetcher** - ROS package for traffic light detection. Contains 
-library with simple traffic light detection and traffic light fetcher node that 
-uses it.
+* **traffic_light_fetcher** - ROS package for simple traffic light fetching. 
+Contains library with simple traffic light detection based on Hough transform 
+and traffic light fetcher node that uses it. 
 
-* **traffic_light_analysis** - ROS package for analyzing the traffic light fetching 
-node results.
+* **traffic_light_analysis** - ROS package for analyzing the traffic light 
+fetching node results.
 
 * **traffic_light_processing** - ROS meta-package for launching full traffic light
 processing pipeline including traffic light fetcher and traffic light analysis.
@@ -63,7 +63,16 @@ source devel/setup.sh
 roslaunch traffic_light_analysis traffic_light_analysis.launch
 ```
 
+## Testing
 
+If you want to run tests, you need to build packages with 
+`CATKIN_ENABLE_TESTING=ON` (it is ON by default in ROS) and run `ctest`: 
+
+```
+catkin_make
+cd build
+ctest --verbose
+```
 
 ## License
 
