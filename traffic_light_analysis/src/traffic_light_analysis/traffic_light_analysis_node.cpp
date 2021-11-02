@@ -26,7 +26,7 @@ void TrafficLightAnalysisNode::setup_node_communications_() noexcept {
 void TrafficLightAnalysisNode::traffic_light_detected_signal_callback_(const std_msgs::Bool &signal) const noexcept {
     if (signal.data == true) {
         std_msgs::Float32 zone_height;
-        zone_height.data = last_detected_traffic_light_bbox_size_.y / 3;
+        zone_height.data = last_detected_traffic_light_bbox_size_.y / 3.0f;
         zone_height_pub_.publish(zone_height);
     }
 }

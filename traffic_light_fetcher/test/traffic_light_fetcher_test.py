@@ -29,7 +29,7 @@ class TrafficLightFetcherTest(unittest.TestCase):
             "~traffic_light_detected", Bool, cls._traffic_light_detected_callback)
         cls.traffic_light_size = rospy.Subscriber(
             "~traffic_light_size", Vector3, cls._traffic_light_size_callback)
-        rospy.sleep(0.5)
+        rospy.sleep(0.3)
 
     def test_first_(self):
         path_to_pkg = rospkg.RosPack().get_path("traffic_light_fetcher")
@@ -37,7 +37,7 @@ class TrafficLightFetcherTest(unittest.TestCase):
         cv_img = cv2.imread(path_to_img)
         msg_img = CvBridge().cv2_to_imgmsg(cv_img, encoding="passthrough")
         self.image_pub.publish(msg_img)
-        rospy.sleep(0.2)
+        rospy.sleep(0.1)
         self.assertEqual(self.traffic_light_detected.data, True)
         self.assertEqual(self.last_detected_traffic_light.x, 11.0)
         self.assertEqual(self.last_detected_traffic_light.y, 33.0)
@@ -49,7 +49,7 @@ class TrafficLightFetcherTest(unittest.TestCase):
         cv_img = cv2.imread(path_to_img)
         msg_img = CvBridge().cv2_to_imgmsg(cv_img, encoding="passthrough")
         self.image_pub.publish(msg_img)
-        rospy.sleep(0.2)
+        rospy.sleep(0.1)
         self.assertEqual(self.traffic_light_detected.data, True)
         self.assertEqual(self.last_detected_traffic_light.x, 10.0)
         self.assertEqual(self.last_detected_traffic_light.y, 30.0)
@@ -61,7 +61,7 @@ class TrafficLightFetcherTest(unittest.TestCase):
         cv_img = cv2.imread(path_to_img)
         msg_img = CvBridge().cv2_to_imgmsg(cv_img, encoding="passthrough")
         self.image_pub.publish(msg_img)
-        rospy.sleep(0.2)
+        rospy.sleep(0.1)
         self.assertEqual(self.traffic_light_detected.data, True)
         self.assertEqual(self.last_detected_traffic_light.x, 9.0)
         self.assertEqual(self.last_detected_traffic_light.y, 27.0)
