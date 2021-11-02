@@ -39,7 +39,7 @@ private:
      * @brief Callback function for input image with possible traffic light.
      * @param img Image that will passed to traffic light detector.
      */
-    void input_image_callback_(const sensor_msgs::ImageConstPtr &img) const noexcept;
+    void input_image_callback_(const sensor_msgs::ImageConstPtr &img) const;
     /**
      * @brief Publish all data for detected traffic light.
      * @details Publish signal that traffic light was detected and it's bounding box size.
