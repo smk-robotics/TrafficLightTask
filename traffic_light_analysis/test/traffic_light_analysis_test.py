@@ -8,7 +8,7 @@ from geometry_msgs.msg import Vector3
 
 class TrafficLightAnalysisTest(unittest.TestCase):
     @classmethod
-    def _zone_height_callback(cls, zone_height_msg):
+    def __zone_height_callback(cls, zone_height_msg):
         cls.zone_height = zone_height_msg
 
     @classmethod
@@ -20,10 +20,10 @@ class TrafficLightAnalysisTest(unittest.TestCase):
         cls.traffic_light_size_pub = rospy.Publisher(
             "~traffic_light_size", Vector3, queue_size=1)
         cls.zone_height_sub = rospy.Subscriber(
-            "~zone_height", Float32, cls._zone_height_callback)
-        rospy.sleep(0.3)
+            "~zone_height", Float32, cls.__zone_height_callback)
+        rospy.sleep(0.5)
 
-    def test_first_(self):
+    def test_first(self):
         traffic_light_size = Vector3()
         traffic_light_size.x = 10.0
         traffic_light_size.y = 30.0
@@ -32,10 +32,10 @@ class TrafficLightAnalysisTest(unittest.TestCase):
         traffic_light_detected.data = True
         self.traffic_light_size_pub.publish(traffic_light_size)
         self.traffic_light_detected_signal_pub.publish(traffic_light_detected)
-        rospy.sleep(0.1)
+        rospy.sleep(0.3)
         self.assertEqual(self.zone_height.data, 10.0)
 
-    def test_second_(self):
+    def test_second(self):
         traffic_light_size = Vector3()
         traffic_light_size.x = 11.0
         traffic_light_size.y = 33.0
@@ -44,10 +44,10 @@ class TrafficLightAnalysisTest(unittest.TestCase):
         traffic_light_detected.data = True
         self.traffic_light_size_pub.publish(traffic_light_size)
         self.traffic_light_detected_signal_pub.publish(traffic_light_detected)
-        rospy.sleep(0.1)
+        rospy.sleep(0.3)
         self.assertEqual(self.zone_height.data, 11.0)
 
-    def test_third_(self):
+    def test_third(self):
         traffic_light_size = Vector3()
         traffic_light_size.x = 9.0
         traffic_light_size.y = 27.0
@@ -56,7 +56,7 @@ class TrafficLightAnalysisTest(unittest.TestCase):
         traffic_light_detected.data = True
         self.traffic_light_size_pub.publish(traffic_light_size)
         self.traffic_light_detected_signal_pub.publish(traffic_light_detected)
-        rospy.sleep(0.1)
+        rospy.sleep(0.3)
         self.assertEqual(self.zone_height.data, 9.0)
 
 if __name__ == "__main__":

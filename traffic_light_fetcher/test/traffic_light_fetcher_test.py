@@ -12,12 +12,12 @@ from geometry_msgs.msg import Vector3
 
 class TrafficLightFetcherTest(unittest.TestCase):
     @classmethod
-    def _traffic_light_detected_callback(cls, traffic_light_detected_msg):
+    def __traffic_light_detected_callback(cls, traffic_light_detected_msg):
         cls.traffic_light_detected = traffic_light_detected_msg
 
     @classmethod
-    def _traffic_light_size_callback(cls, traffic_light_size_msg):
-        cls.last_detected_traffic_light = traffic_light_size_msg;
+    def __traffic_light_size_callback(cls, traffic_light_size_msg):
+        cls.last_detected_traffic_light = traffic_light_size_msg
 
     @classmethod
     def setUpClass(cls):
@@ -26,12 +26,12 @@ class TrafficLightFetcherTest(unittest.TestCase):
         cls.last_detected_traffic_light = None
         cls.image_pub = rospy.Publisher("~image_topic", Image, queue_size=1)
         cls.traffic_light_detected_sub = rospy.Subscriber(
-            "~traffic_light_detected", Bool, cls._traffic_light_detected_callback)
+            "~traffic_light_detected", Bool, cls.__traffic_light_detected_callback)
         cls.traffic_light_size = rospy.Subscriber(
-            "~traffic_light_size", Vector3, cls._traffic_light_size_callback)
+            "~traffic_light_size", Vector3, cls.__traffic_light_size_callback)
         rospy.sleep(0.3)
 
-    def test_first_(self):
+    def test_first(self):
         path_to_pkg = rospkg.RosPack().get_path("traffic_light_fetcher")
         path_to_img = osp.join(path_to_pkg, "testdata", "1.jpg")
         cv_img = cv2.imread(path_to_img)
@@ -43,7 +43,7 @@ class TrafficLightFetcherTest(unittest.TestCase):
         self.assertEqual(self.last_detected_traffic_light.y, 33.0)
         self.assertEqual(self.last_detected_traffic_light.z, 0.0)
 
-    def test_second_(self):
+    def test_second(self):
         path_to_pkg = rospkg.RosPack().get_path("traffic_light_fetcher")
         path_to_img = osp.join(path_to_pkg, "testdata", "2.jpg")
         cv_img = cv2.imread(path_to_img)
@@ -55,7 +55,7 @@ class TrafficLightFetcherTest(unittest.TestCase):
         self.assertEqual(self.last_detected_traffic_light.y, 30.0)
         self.assertEqual(self.last_detected_traffic_light.z, 0.0)
 
-    def test_third_(self):
+    def test_third(self):
         path_to_pkg = rospkg.RosPack().get_path("traffic_light_fetcher")
         path_to_img = osp.join(path_to_pkg, "testdata", "3.jpg")
         cv_img = cv2.imread(path_to_img)
